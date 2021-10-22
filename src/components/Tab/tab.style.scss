@@ -1,0 +1,30 @@
+.tabs {
+  width: 100%;
+  margin-top: 2px;
+  padding-top: 1rem;
+
+  @media screen and (max-width: 480px) {
+    overflow: auto;
+  }
+}
+
+.tab__list {
+  border-bottom: 1px solid #ccc;
+  display: flex;
+
+  &-item {
+    padding: 0.5rem 0.75rem;
+    cursor: pointer;
+    text-transform: capitalize;
+
+    &:hover {
+      color: #4b9ce2;
+      border-bottom: 2px solid #4b9ce2;
+    }
+  }
+}
+
+.tab__list-active {
+  color: #4b9ce2;
+  border-bottom: 2px solid #4b9ce2;
+}

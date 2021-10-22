@@ -1,0 +1,34 @@
+.home_container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.home_banner {
+  margin-top: 1rem;
+  width: 75rem;
+  height: 24rem;
+
+  img {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+  }
+
+  @media screen and (max-width: 480px) {
+    width: 100%;
+    height: 50%;
+    padding: 0 0.5rem;
+  }
+}
+
+.tab__content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+  margin-top: 1rem;
+  margin-bottom: 4rem;
+
+  // @media screen and (max-width: 480px) {
+  //   grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+  // }
+}
