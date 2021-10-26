@@ -1,5 +1,5 @@
-import * as ACCOUNT from "../constants/account";
-import { getGivenOffers } from "../services/accountService";
+import * as ACCOUNT from "../../constants/account";
+import { getGivenOffers } from "../../services/accountService";
 
 const givenOffersRequest = () => ({
   type: ACCOUNT.GIVEN_OFFERS_REQUEST,

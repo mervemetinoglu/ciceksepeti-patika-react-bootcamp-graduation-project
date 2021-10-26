@@ -1,5 +1,5 @@
-import * as PRODUCT from "../constants/products";
-import { getProductByID } from "../services/productsService";
+import * as PRODUCT from "../../constants/products";
+import { getProductByID } from "../../services/productsService";
 
 const productRequest = () => ({
   type: PRODUCT.PRODUCT_REQUEST,
