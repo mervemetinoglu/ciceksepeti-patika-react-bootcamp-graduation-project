@@ -9,6 +9,12 @@
   height: 32rem;
   background-color: #fff;
   border-radius: 8px;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  @media screen and (max-width: 480px) {
+    width: 95%;
+  }
 }
 
 .account__info {
@@ -32,18 +38,164 @@
     width: 2rem;
     height: 2rem;
   }
-}
 
-.account_tabs {
-  padding: 0 1rem;
-  background-color: blue;
-  div {
-    color: #b1b1b1;
+  @media screen and (max-width: 480px) {
+    width: 95%;
   }
 }
 
-.aldiklarim {
-  width: 50px;
-  background-color: red;
-  height: 50px;
+.account_tabs {
+  padding: 0.8rem 1rem;
+
+  .active {
+    color: #4b9ce2;
+    border-bottom: 2px solid #4b9ce2;
+  }
+
+  span {
+    color: #b1b1b1;
+    cursor: pointer;
+    &:last-child {
+      margin-left: 1rem;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.account__product-content {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.offer__item {
+  width: 97%;
+  padding: 0.6rem 0.7rem;
+  margin: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #f2f2f2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #555555;
+
+  div {
+    &:first-child {
+      display: flex;
+      text-transform: capitalize;
+      cursor: pointer;
+      img {
+        width: 50px;
+        height: 50px;
+        object-fit: contain;
+        border-radius: 8px;
+        padding: 0.2rem 0;
+        margin-right: 0.2rem;
+      }
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0.2rem 0.3rem;
+    margin: 0;
+  }
+}
+
+.offer__item-price {
+  margin-top: 5px;
+  width: 12rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  background-color: #f2f2f2;
+  color: #b1b1b1;
+  span {
+    color: #525252;
+    font-weight: 700;
+  }
+}
+
+.received-offers__item-buttons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 17%;
+  margin-right: 2rem;
+
+  button {
+    width: 86px;
+    padding: 0.4rem 1rem;
+    border-radius: 8px;
+    color: #fff;
+    cursor: pointer;
+
+    &:first-child {
+      background-color: #4b9ce2;
+    }
+    &:last-child {
+      background-color: #f77474;
+    }
+  }
+}
+
+.accepted-offer {
+  width: 17%;
+  margin-right: 2rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  button {
+    width: 86px;
+    padding: 0.4rem 1rem;
+    border-radius: 8px;
+    color: #fff;
+    cursor: pointer;
+    background-color: #4b9ce2;
+  }
+
+  span {
+    font-size: 0.9rem;
+    color: #4b9ce2;
+  }
+}
+
+.rejected-offer {
+  margin-right: 2rem;
+
+  span {
+    font-size: 0.9rem;
+    color: #f77474;
+  }
+}
+
+.rejected-text {
+  margin-right: 2rem;
+
+  span {
+    font-size: 0.9rem;
+    color: #f77474;
+  }
+  @media screen and (max-width: 480px) {
+    margin-top: 0.2rem;
+    align-self: flex-end;
+  }
+}
+
+.product__status-info {
+  color: #46af32;
+  font-size: 0.9rem;
+  margin-right: 2rem;
+  @media screen and (max-width: 480px) {
+    align-self: flex-end;
+  }
 }

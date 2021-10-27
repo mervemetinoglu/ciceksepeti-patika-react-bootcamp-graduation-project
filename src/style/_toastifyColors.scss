@@ -1,3 +1,10 @@
+//notification colors
+$notify-success-bg: #f1fff0;
+$notify-success-color: #46af32;
+
+$notify-error-bg: #ffe5e5;
+$notify-error-color: #f77474;
+
 .Toastify__toast--error {
   background: $notify-error-bg;
   color: $notify-error-color;

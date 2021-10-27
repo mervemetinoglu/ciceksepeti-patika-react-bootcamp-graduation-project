@@ -9,6 +9,7 @@ export const Overlay = styled.div`
   background-color: #4b9ce2;
   opacity: 0.7;
   transition: 200ms ease-in-out;
+  z-index: 2;
 `;
 
 export const ModalWrapper = styled.div`
@@ -18,15 +19,15 @@ export const ModalWrapper = styled.div`
   transform: translate(-50%, -50%) scale(1);
   width: ${(props) => (props.isOfferModal ? "30rem" : "23rem")};
   height: ${(props) => (props.isOfferModal ? "26rem" : "11rem")};
-  // max-width: 50%;
   max-height: 60%;
   background-color: #fff;
   border-radius: 10px;
   transition: 200ms ease-in-out;
   opacity: 1;
+  z-index: 4;
 
   @media screen and (max-width: 480px) {
     width: 95%;
-    top: ${(props) => (props.isOfferModal ? "28%" : "50%")};
+    top: ${(props) => (props.isOfferModal ? "210px" : "50%")};
   }
 `;

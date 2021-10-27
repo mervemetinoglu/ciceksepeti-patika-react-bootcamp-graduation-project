@@ -33,6 +33,18 @@
     color: #fff;
     background-color: #4b9ce2;
     border-radius: 8px;
+    font-weight: 700;
+    font-family: "Nunito";
+  }
+
+  @media screen and (max-width: 480px) {
+    width: 90%;
+    input {
+      width: 100%;
+    }
+    button {
+      width: 100%;
+    }
   }
 }
 

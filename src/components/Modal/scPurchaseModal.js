@@ -8,6 +8,7 @@ export const WrapperPurchaseModal = styled.div`
   padding: 1rem 0.5rem;
   text-align: center;
   color: #525252;
+
   h4 {
     font-weight: normal;
   }
@@ -22,6 +23,15 @@ export const WrapperPurchaseModal = styled.div`
       &:last-child {
         margin-left: 10px;
       }
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    h2 {
+      font-size: 25px;
+    }
+    h4 {
+      font-size: 15px;
     }
   }
 `;

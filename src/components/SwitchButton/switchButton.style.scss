@@ -1,7 +1,7 @@
 .switch {
   position: relative;
   display: inline-block;
-  width: 3.1rem;
+  width: 2.9rem;
   height: 1.5rem;
 
   input {
@@ -25,10 +25,10 @@
   &:before {
     position: absolute;
     content: "";
-    height: 1.4rem;
-    width: 1.4rem;
+    height: 1.3rem;
+    width: 1.3rem;
     left: 4px;
-    bottom: 1px;
+    bottom: 2px;
     background-color: #fff;
     -webkit-transition: 0.4s;
     transition: 0.4s;

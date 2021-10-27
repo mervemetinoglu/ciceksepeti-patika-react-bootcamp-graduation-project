@@ -13,8 +13,9 @@
 
   @media screen and (max-width: 480px) {
     width: 95%;
-    height: 40rem;
     flex-direction: column;
+    margin-bottom: 20px;
+    height: 40rem;
   }
 }
 
@@ -60,8 +61,44 @@
     width: 100%;
     margin-left: 0;
     padding: 0 0.5rem;
+
+    h2 {
+      font-size: 18px;
+    }
+
+    h3 {
+      font-size: 20px;
+      position: absolute;
+      top: 22rem;
+    }
+  }
+
+  .given-offer {
+    margin-top: 2px;
+    width: 14rem;
+    padding: 0.5rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    background-color: #f2f2f2;
+    color: #b1b1b1;
+    span {
+      color: #525252;
+      font-weight: 700;
+    }
+
+    @media screen and (max-width: 480px) {
+      width: 11rem;
+      font-size: 12px;
+      position: absolute;
+      top: 22.8rem;
+      right: 5px;
+      span {
+        font-size: 14px;
+      }
+    }
   }
 }
+
 .product__info {
   display: flex;
   margin-top: 1.2rem;
@@ -81,6 +118,12 @@
       }
     }
   }
+
+  @media screen and (max-width: 480px) {
+    font-size: 15px;
+    position: absolute;
+    top: 24rem;
+  }
 }
 
 .product__buttons {
@@ -94,8 +137,13 @@
 
   @media screen and (max-width: 480px) {
     width: 100%;
-    position: absolute;
-    bottom: 0;
+    position: fixed;
+    padding: 0.5rem;
+    left: 0;
+    bottom: 6rem;
+    display: flex;
+    background-color: #fff;
+    z-index: 1;
   }
 }
 
@@ -103,10 +151,18 @@
   margin-top: 2rem;
   h4 {
     font-size: 1.1rem;
+    font-weight: 700;
   }
   p {
     margin-top: 0.5rem;
     overflow: auto;
+  }
+
+  @media screen and (max-width: 480px) {
+    font-size: 15px;
+    position: absolute;
+    top: 30rem;
+    overflow-y: auto;
   }
 }
 
@@ -118,4 +174,9 @@
   background-color: #fff0e2;
   color: #faad60;
   text-align: center;
+
+  @media screen and (max-width: 480px) {
+    width: 95%;
+    margin: 0 auto;
+  }
 }
