@@ -9,18 +9,22 @@ import PrivateRoute from "./routes/PrivateRoute";
 
 function App() {
   return (
-    <>
-      <Switch>
-        <PrivateRoute path="/" exact>
-          <Home />
-        </PrivateRoute>
-        <Route path="/register" component={Register} />
-        <Route path="/login" component={Login} />
-        <Route path="/products/:id" component={ProductDetailPage} />
-        <Route path="/account" component={Account} />
-        <Route path="/addProduct" component={AddProduct} />
-      </Switch>
-    </>
+    <Switch>
+      <PrivateRoute path="/" exact>
+        <Home />
+      </PrivateRoute>
+      <PrivateRoute path="/products/:id">
+        <ProductDetailPage />
+      </PrivateRoute>
+      <PrivateRoute path="/account">
+        <Account />
+      </PrivateRoute>
+      <PrivateRoute path="/add-product">
+        <AddProduct />
+      </PrivateRoute>
+      <Route path="/register" component={Register} />
+      <Route path="/login" component={Login} />
+    </Switch>
   );
 }
 
