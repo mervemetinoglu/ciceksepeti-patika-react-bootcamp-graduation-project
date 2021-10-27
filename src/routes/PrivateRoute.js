@@ -3,11 +3,13 @@ import { Redirect, Route } from "react-router-dom";
 import { getToken } from "../helpers/auth";
 
 function PrivateRoute({ children, ...rest }) {
+  const accessToken = getToken();
+
   return (
     <Route
       {...rest}
       render={({ location }) =>
-        getToken() ? (
+        accessToken ? (
           children
         ) : (
           <Redirect
