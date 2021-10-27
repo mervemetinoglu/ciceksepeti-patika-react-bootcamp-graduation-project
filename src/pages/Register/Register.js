@@ -1,20 +1,20 @@
 import React, { useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { getToken } from "../../helpers/auth";
 import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import AuthContainer from "../../components/AuthContainer/AuthContainer";
 import Form from "../../components/AuthForm/Form";
-import { getToken } from "../../helpers/auth";
 
 const Register = () => {
-  const register = useSelector((state) => state.register);
+  const {token, isError} = useSelector((state) => state.register);
   const history = useHistory();
 
-  //if client has an access token redirect to home page
   useEffect(() => {
-    const condition = register.token?.length;
+    const condition = token?.length;
     if (condition) history.push("/");
-  }, [history, register.token?.length]);
+  }, [history, token?.length]);
 
   return (
     <AuthContainer>
@@ -25,7 +25,7 @@ const Register = () => {
         Hesabın var mı? <Link to="/login">Giriş Yap</Link>
       </p>
 
-      {register.isError && (
+      {isError && (
         <ToastContainer
           position="top-right"
           autoClose={5000}

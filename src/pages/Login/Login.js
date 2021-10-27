@@ -1,20 +1,20 @@
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
+import { getToken } from "../../helpers/auth";
 import AuthContainer from "../../components/AuthContainer/AuthContainer";
 import Form from "../../components/AuthForm/Form";
-import { getToken } from "../../helpers/auth";
 import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
-  const login = useSelector((state) => state.login);
+  const { token, isError } = useSelector((state) => state.login);
   const history = useHistory();
 
   useEffect(() => {
-    const condition = login.token?.length;
+    const condition = token?.length;
     if (condition) history.push("/");
-  }, [history, login.token?.length]);
+  }, [history, token?.length]);
 
   return (
     <AuthContainer>
@@ -26,7 +26,7 @@ const Login = () => {
       <p className="auth__link">
         Hesabın yok mu? <Link to="/register">Üye Ol</Link>
       </p>
-      {login.isError && (
+      {isError && (
         <ToastContainer
           position="top-right"
           autoClose={5000}
