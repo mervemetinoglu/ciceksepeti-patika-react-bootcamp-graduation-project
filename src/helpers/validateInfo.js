@@ -1,9 +1,13 @@
 export const validateInfo = (values) => {
-  let errors = {};
+  let errors = {
+    email: "",
+    password: "",
+  };
+  const emailRgx = /^[^\s@]+@[^\s@]+\.[^\s@]+$/i;
 
   if (!values.email) {
     errors.email = "Email gerekli!";
-  } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/i.test(values.email)) {
+  } else if (!emailRgx.test(values.email)) {
     errors.email = "Email geçerli değil!";
   }
 
