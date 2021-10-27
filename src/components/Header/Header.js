@@ -23,7 +23,7 @@ const Header = () => {
   };
 
   const displayAddProduct = () => {
-    history.push("/addProduct");
+    history.push("/add-product");
   };
 
   return (
@@ -34,16 +34,16 @@ const Header = () => {
       {token ? (
         <nav className="header__buttons">
           <button onClick={displayAddProduct}>
-            <AiOutlinePlus /> Ürün Ekle
+            <AiOutlinePlus fontWeight="bold" /> Ürün Ekle
           </button>
           <button onClick={displayAccount}>
-            <AiOutlineUser /> Hesabım
+            <AiOutlineUser fontWeight="bold" /> Hesabım
           </button>
         </nav>
       ) : (
         <nav className="header__buttons">
           <button onClick={displayLogin}>
-            <AiOutlineUser /> Giriş Yap
+            <AiOutlineUser fontWeight="bold" /> Giriş Yap
           </button>
         </nav>
       )}

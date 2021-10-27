@@ -1,5 +1,5 @@
 import React from "react";
-import './authForm.style.scss';
+import "./authForm.style.scss";
 import useForm from "../../hooks/useForm";
 
 const Form = ({ text, isLogin }) => {

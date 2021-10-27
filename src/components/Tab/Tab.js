@@ -1,42 +1,42 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./tab.style.scss";
-import TabItem from "./TabItem";
 import { useHistory } from "react-router-dom";
 
-const Tabs = ({ label, children, filterProducts, isFilter }) => {
-  const [activeTab, setActiveTab] = useState(label);
+const Tabs = ({ activeTab, children, onClickItem, setActiveTab }) => {
   const history = useHistory();
-
-  const onClickTabItem = (tabName) => {
-    setActiveTab(tabName);
-    if (isFilter) {
-      history.push({
-        pathname: "/",
-        search: `?query=${tabName}`,
-      });
-      filterProducts();
-    }
-  };
-
-  useEffect(() => {
-    if (isFilter) filterProducts();
-  }, [filterProducts, isFilter]);
 
   return (
     <div className="tabs">
-      <ol className="tab__list">
-        {children.map((child) => {
-          const { label } = child.props;
-          return (
-            <TabItem
-              activeTab={activeTab}
-              key={label}
-              label={label}
-              onClick={() => onClickTabItem(child.props.label)}
-            />
-          );
-        })}
-      </ol>
+      <div
+        className={
+          activeTab === null 
+            ? "tab__list-item tab__list-active"
+            : "tab__list-item"
+        }
+        onClick={() => {
+          setActiveTab(null);
+          history.push("/");
+        }}
+      >
+        Hepsi
+      </div>
+      {children.map((child) => {
+        const { label } = child.props;
+
+        return (
+          <div
+            key={label}
+            className={
+              activeTab === label
+                ? "tab__list-item tab__list-active"
+                : "tab__list-item"
+            }
+            onClick={() => onClickItem(label)}
+          >
+            {label}
+          </div>
+        );
+      })}
     </div>
   );
 };
