@@ -19,7 +19,7 @@ const useForm = (isLogin) => {
   };
 
   const onBlur = () => {
-    // if (values.email.length > 0 && values.password.length > 0)
+    if (values.email.length > 0 && values.password.length > 0)
       setErrors(validateInfo(values));
   };
 
@@ -32,7 +32,6 @@ const useForm = (isLogin) => {
       dispatch(registerAction(values));
       setEmail(values.email);
     }
-
   };
 
   return { onChange, values, handleSubmit, errors, onBlur };
