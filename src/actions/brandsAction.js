@@ -1,5 +1,5 @@
 import * as BRANDS from "../constants/brands";
-import { getBrands, getBrandByID } from "../services/brandService";
+import getBrands from "../services/brandService";
 
 const brandsRequest = () => ({
   type: BRANDS.ALL_BRANDS_REQUEST,
@@ -15,20 +15,6 @@ const brandsFailure = (payload) => ({
   payload,
 });
 
-const brandRequest = () => ({
-  type: BRANDS.BRAND_REQUEST,
-});
-
-const brandSuccess = (payload) => ({
-  type: BRANDS.BRAND_SUCCESS,
-  payload,
-});
-
-const brandFailure = (payload) => ({
-  type: BRANDS.BRAND_FAILURE,
-  payload,
-});
-
 const brandsAction = () => async (dispatch) => {
   dispatch(brandsRequest());
   try {
@@ -39,14 +25,4 @@ const brandsAction = () => async (dispatch) => {
   }
 };
 
-const brandAction = (id) => async (dispatch) => {
-  dispatch(brandRequest());
-  try {
-    const { data } = await getBrandByID(id);
-    dispatch(brandSuccess(data));
-  } catch (error) {
-    dispatch(brandFailure(error));
-  }
-};
-
-export { brandsAction, brandAction };
+export default brandsAction;

@@ -6,11 +6,6 @@ const allCategoriesInitialState = {
   isError: false,
 };
 
-const categoryInitialState = {
-  category: {},
-  isFetching: false,
-  isError: false,
-};
 
 const allCategoriesReducer = (state = allCategoriesInitialState, action) => {
   switch (action.type) {
@@ -29,21 +24,5 @@ const allCategoriesReducer = (state = allCategoriesInitialState, action) => {
   }
 };
 
-const categoryReducer = (state = categoryInitialState, action) => {
-  switch (action.type) {
-    case CATEGORIES.CATEGORY_REQUEST:
-      return { ...state, isFetching: true };
-    case CATEGORIES.CATEGORY_SUCCESS: {
-      return {
-        ...state,
-        category: action.payload,
-      };
-    }
-    case CATEGORIES.CATEGORY_FAILURE:
-      return { ...state, isError: true, isFetching: false };
-    default:
-      return state;
-  }
-};
 
-export { allCategoriesReducer, categoryReducer };
+export default allCategoriesReducer;

@@ -7,9 +7,6 @@ const getCategories = async () => {
   return response;
 };
 
-const getCategoryByID = async (id) => {
-  const response = await axios.get(`${API_URL}id`);
-  return response;
-};
 
-export { getCategories, getCategoryByID };
+
+export default getCategories;

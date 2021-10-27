@@ -7,9 +7,4 @@ const getColors = async () => {
   return response;
 };
 
-const getColorByID = async (id) => {
-  const response = await axios.get(`${API_URL}${id}`);
-  return response;
-};
-
-export { getColors, getColorByID };
+export default getColors;

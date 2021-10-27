@@ -7,9 +7,4 @@ const getStatus = async () => {
   return response;
 };
 
-const getStatuByID = async (id) => {
-  const response = await axios.get(`${API_URL}${id}`);
-  return response;
-};
-
-export { getStatus, getStatuByID };
+export default getStatus;

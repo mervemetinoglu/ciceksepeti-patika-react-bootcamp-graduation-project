@@ -1,5 +1,5 @@
 import * as CATEGORIES from "../constants/categories";
-import { getCategories } from "../services/categoryService";
+import getCategories from "../services/categoryService";
 
 const categoriesRequest = () => ({
   type: CATEGORIES.ALL_CATEGORIES_REQUEST,

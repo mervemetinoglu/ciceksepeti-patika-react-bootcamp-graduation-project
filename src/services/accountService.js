@@ -16,17 +16,23 @@ const getReceivedOffers = async () => {
 };
 
 const rejectOffer = async (id) => {
-  const response = await axios.post(`${API_URL}/reject-offer/${id}`, header);
+  const response = await axios.post(
+    `${API_URL}/reject-offer/${id}`,id,
+    header
+  );
   return response;
 };
 
 const acceptOffer = async (id) => {
-  const response = await axios.put(`${API_URL}/accept-offer/${id}`, header);
+  const response = await axios.put(
+    `${API_URL}/accept-offer/${id}`,id,
+    header
+  );
   return response;
 };
 
 const cancelOffer = async (id) => {
-  const response = await axios.delete(`${API_URL}/cancel-offer/${id}`, header);
+  const response = await axios.delete(`${API_URL}/cancel-offer/${id}`, id, header);
   return response;
 };
 

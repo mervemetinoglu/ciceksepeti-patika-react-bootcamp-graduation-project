@@ -7,9 +7,4 @@ const getBrands = async () => {
   return response;
 };
 
-const getBrandByID = async (id) => {
-  const response = await axios.get(`${API_URL}${id}`);
-  return response;
-};
-
-export { getBrands, getBrandByID };
+export default getBrands;

@@ -1,11 +1,5 @@
 import * as COLOR from "../constants/color";
 
-const colorInitialState = {
-  color: {},
-  isFetching: false,
-  isError: false,
-};
-
 const allColorsInitialState = {
   allColors: [],
   isFetching: false,
@@ -30,22 +24,4 @@ const allColorsReducer = (state = allColorsInitialState, action) => {
   }
 };
 
-const colorReducer = (state = colorInitialState, action) => {
-  switch (action.type) {
-    case COLOR.COLOR_REQUEST:
-      return { ...state, isFetching: true };
-    case COLOR.COLOR_SUCCESS:
-      return {
-        ...state,
-        color: action.payload,
-        isFetching: false,
-        isError: false,
-      };
-    case COLOR.COLOR_FAILURE:
-      return { ...state, isError: true, isFetching: false };
-    default:
-      return state;
-  }
-};
-
-export { allColorsReducer, colorReducer };
+export default allColorsReducer;

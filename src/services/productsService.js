@@ -23,14 +23,14 @@ const createProduct = async (product) => {
 const offerProduct = async (id, offeredPrice) => {
   const response = await axios.post(
     `${API_URL}offer/${id}`,
-    offeredPrice,
+ offeredPrice ,
     header
   );
   return response;
 };
 
 const purchaseProduct = async (id) => {
-  const response = await axios.put(`${API_URL}purchase/${id}`, header);
+  const response = await axios.put(`${API_URL}purchase/${id}`, id, header);
   return response;
 };
 

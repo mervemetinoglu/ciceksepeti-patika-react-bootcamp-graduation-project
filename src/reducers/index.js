@@ -2,15 +2,22 @@ import { combineReducers } from "redux";
 
 import RegisterReducer from "./register";
 import loginReducer from "./login";
-import { allProductsReducer, productReducer } from "./product";
-import { allCategoriesReducer, categoryReducer } from "./category";
-import { allStatusReducer, statusReducer } from "./status";
-import { allBrandsReducer, brandReducer } from "./brand";
-import { allColorsReducer, colorReducer } from "./color";
+import { allProductsReducer, productReducer } from "./product/product";
+import  allCategoriesReducer from "./category";
+import  allStatusReducer from "./status";
+import  allBrandsReducer from "./brand";
+import allColorsReducer from "./color";
 import {
   givenOffersReducer,
   receivedOffersReducer,
 } from "./account/userOffers";
+import acceptOffer from "./account/acceptOffer";
+import cancelOffer from "./account/cancelOffer";
+import rejectOffer from "./account/rejectOffer";
+import purchaseProduct from "./product/purchaseProduct";
+import createProduct from "./product/createProduct";
+import offerProduct from "./product/offerProduct";
+import uploadFile from "./uploadFile";
 
 const rootReducer = combineReducers({
   register: RegisterReducer,
@@ -18,15 +25,18 @@ const rootReducer = combineReducers({
   products: allProductsReducer,
   product: productReducer,
   categories: allCategoriesReducer,
-  category: categoryReducer,
   allStatus: allStatusReducer,
-  productStatus: statusReducer,
   brands: allBrandsReducer,
-  brand: brandReducer,
   colors: allColorsReducer,
-  color: colorReducer,
   givenOffers: givenOffersReducer,
   receivedOffers: receivedOffersReducer,
+  purchaseProduct: purchaseProduct,
+  acceptOffer: acceptOffer,
+  cancelOffer: cancelOffer,
+  rejectOffer: rejectOffer,
+  createProduct: createProduct,
+  offerProduct: offerProduct,
+  file: uploadFile,
 });
 
 export default rootReducer;
