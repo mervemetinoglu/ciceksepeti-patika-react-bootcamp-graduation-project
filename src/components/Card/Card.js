@@ -6,7 +6,7 @@ const Card = ({ product }) => {
   const history = useHistory();
 
   const pushProduct = () => {
-    history.push("/products/" + product.id);
+    history.push(`/products/${product.id}`);
   };
 
   return (

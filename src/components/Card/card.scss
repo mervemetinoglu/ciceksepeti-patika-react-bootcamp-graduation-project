@@ -13,17 +13,29 @@
     overflow: hidden;
     color: #3e3e3e;
   }
+
+  @media screen and (max-width: 480px) {
+    padding: 0 0.2rem;
+
+    &__content {
+      height: 15.6rem;
+    }
+  }
 }
 
 .card-img {
   height: 16rem;
-  
+
   img {
     padding: 0.1rem 0;
     width: 100%;
     height: 100%;
     object-fit: contain;
     border-radius: 8px;
+  }
+
+  @media screen and (max-width: 480px) {
+    height: 11rem;
   }
 }
 
@@ -43,6 +55,19 @@
       font-weight: 400;
     }
   }
+
+  @media screen and (max-width: 480px) {
+    padding-left: 0.2rem;
+    margin-top: 0.2rem;
+    flex-direction: column;
+
+    h3 {
+      font-size: 15px;
+      &:last-child {
+        font-size: 10px;
+      }
+    }
+  }
 }
 
 .card-footer {
@@ -52,5 +77,12 @@
     margin-top: 1rem;
     font-size: 1rem;
   }
-}
 
+  @media screen and (max-width: 480px) {
+    padding-left: 0.2rem;
+    h2 {
+      font-size: 15px;
+      margin-top: 10px;
+    }
+  }
+}
