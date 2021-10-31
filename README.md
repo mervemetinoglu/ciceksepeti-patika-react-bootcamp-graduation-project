@@ -44,7 +44,7 @@ The example application is a sample e-commerce site called "Ikinci El Project". 
 
 ## Performance Metrics
 
-![performance](src/assets/performance.JPG)
+![performance](src/assets/performance/performance.JPG)
 
 **Tools that I used:**
 
